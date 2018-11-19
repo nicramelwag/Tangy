@@ -15,22 +15,22 @@ namespace Tangy.Services
         {
             //Configure your credentials and uncomment code to send emails.
 
-            //SmtpClient client = new SmtpClient("smtp.gmail.com", 587)
-            //{
-            //    UseDefaultCredentials = false,
-            //    Credentials = new NetworkCredential("ben.spark92@gmail.com", "password"),
-            //    EnableSsl = true
-            //};
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587)
+            {
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential("teting1995@gmail.com", "xsW@CDe3"),
+                EnableSsl = true
+            };
 
-            //MailMessage mailMessage = new MailMessage
-            //{
-            //    From = new MailAddress("ben.spark92@gmail.com")
-            //};
-            //mailMessage.To.Add(email);
-            //mailMessage.Body = message;
-            //mailMessage.IsBodyHtml = true;
-            //mailMessage.Subject = subject;
-            //client.Send(mailMessage);
+            MailMessage mailMessage = new MailMessage
+            {
+                From = new MailAddress("teting1995@gmail.com")
+            };
+            mailMessage.To.Add(email);
+            mailMessage.Body = message;
+            mailMessage.IsBodyHtml = true;
+            mailMessage.Subject = subject;
+            client.Send(mailMessage);
             return Task.CompletedTask;
         }
     }

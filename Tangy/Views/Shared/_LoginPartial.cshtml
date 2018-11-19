@@ -8,7 +8,7 @@
     <form asp-controller="Account" asp-action="Logout"  asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
-                <a asp-controller="Manage" asp-action="Index" class="nav-link" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+                <a asp-controller="Manage" asp-action="Index" class="nav-link" title="Manage">@await Component.InvokeAsync("UserName")</a>
             </li>
             <li class="nav-item">
                 <button type="submit" class="btn btn-link navbar-btn nav-link">Logout</button>

@@ -1,0 +1,25 @@
+﻿@model Tangy.Models.OrderDetailsViewModel.OrderListViewModel
+@{
+    ViewData["Title"] = "OrderHistory";
+}
+<h2>Order History</h2>
+<br />
+@if (Model.Orders.Count > 0)
+{
+    @foreach (var item in Model.Orders)
+    {
+        @Html.Partial("_IndividualOrderDetails", item)
+
+    }
+
+}
+else
+{
+    <p>No past orders available...</p>
+
+}
+<br />
+<div page-model="@Model.PagingInfo" page-action="OrderHistory" page-classes-enabled="true"
+     page-class="btn border" page-class-normal="btn btn-default active"
+     page-class-selected="btn btn-primary active" class="btn-group m-1"></div>
+<br />

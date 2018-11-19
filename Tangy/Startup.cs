@@ -51,6 +51,18 @@ namespace Tangy
 
             services.AddTransient<IEmailSender, EmailSender>();
 
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = "732129633813935";
+                facebookOptions.AppSecret = "b1917841635da1b24f14e77b837191f6";
+            });
+
+            services.AddAuthentication().AddGoogle(googleOptions =>
+            {
+                googleOptions.ClientId = "659812289303-2d5h4c3o4qskbgg5vgspq07a5ve87qsp.apps.googleusercontent.com";
+                googleOptions.ClientSecret = "wHJBONc3xB6nsZsqKu3QQip9";
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSession(options =>
